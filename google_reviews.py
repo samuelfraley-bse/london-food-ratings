@@ -6,10 +6,10 @@ from typing import Dict, List
 # --------------- CONFIG ---------------
 
 API_KEY = "AIzaSyBQmiGzRgtUR82WYvf3tb9ei0yrvA4DRok"  # <- REGENERATE & PASTE A FRESH KEY HERE
-OUTPUT_FILE = "london_restaurants_grid.csv"
+OUTPUT_FILE = "london_restaurants_grid_v2.csv"
 
 # Target number of unique restaurants
-TARGET_PLACES = 1000
+TARGET_PLACES = 10000
 
 # Rough bounding box for Greater London
 MIN_LAT = 51.28
@@ -54,7 +54,7 @@ def nearby_restaurants_at_point(lat: float, lng: float) -> List[Dict]:
     """
     body = {
         "includedTypes": ["restaurant"],
-        "maxResultCount": 20,  # max results to return for this point
+        "maxResultCount" : 20, # max results to return for this point
         "locationRestriction": {
             "circle": {
                 "center": {"latitude": lat, "longitude": lng},
